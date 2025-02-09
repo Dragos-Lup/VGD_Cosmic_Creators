@@ -16,17 +16,19 @@ public class PickupHandler : MonoBehaviour
         {
             if (!holding){
                 holding = true;
+                backpack.SetActive(true);
             }
-            backpack.SetActive(true);
+
             
 
         } else if (other.gameObject.CompareTag("Dropoff")) {
             if (holding){
                 holding = false;
+                count++;
+                SetCountText();
+                backpack.SetActive(false);
             }
-            count++;
-            SetCountText();
-            backpack.SetActive(false);
+            
         }
     }
 
