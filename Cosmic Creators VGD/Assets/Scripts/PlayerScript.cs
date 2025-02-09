@@ -58,15 +58,17 @@ public class PlayerScript : MonoBehaviour
     {
         rb.AddForce(new Vector3(PlayerInputScript.h * forceModifier, 0, 0)); //x force
         rb.AddForce(new Vector3(0, 0, PlayerInputScript.v * forceModifier)); //z force
-        float h = rb.velocity.x;
-        float v = rb.velocity.z;
-        float XZSpeed = Mathf.Sqrt(h * h + v * v);
-        if(XZSpeed > maxSpeed)
-        {
-            h = h * Mathf.Sqrt(1f - 0.5f * v * v);
-            v = v * Mathf.Sqrt(1f - 0.5f * h * h);
-            rb.velocity = new Vector3(h * maxSpeed, 0, v * maxSpeed);
-        }
+        
+        // float h = rb.velocity.x;
+        // float v = rb.velocity.z;
+        // float XZSpeed = Mathf.Sqrt(h * h + v * v);
+        // if(XZSpeed > maxSpeed)
+        // {
+        //     h = h * Mathf.Sqrt(1f - 0.5f * v * v);
+        //     v = v * Mathf.Sqrt(1f - 0.5f * h * h);
+        //     rb.velocity = new Vector3(h * maxSpeed, 0, v * maxSpeed);
+        // }
+        
     }
     void Jump()
     {
