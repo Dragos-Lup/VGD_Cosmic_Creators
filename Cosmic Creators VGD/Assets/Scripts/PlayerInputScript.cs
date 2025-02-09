@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerInputScript : MonoBehaviour
 {
     //[Header("Input")]
-    public float vInput
+    public float v
     {
         get;
         private set;
     }
 
-    public float hInput
+    public float h
     {
         get;
         private set;
@@ -37,9 +37,15 @@ public class PlayerInputScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hInput = Input.GetAxisRaw("Horizontal");
-        vInput = Input.GetAxisRaw("Vertical");
+        h = Input.GetAxisRaw("Horizontal");
+        v = Input.GetAxisRaw("Vertical");
 
-        Jump = Input.GetButtonDown("Jump");
+        if (true)
+        {
+            h = h * Mathf.Sqrt(1f - 0.5f * v * v);
+            v = v * Mathf.Sqrt(1f - 0.5f * h * h);
+        }
+
+        Jump = Input.GetButton("Jump");
     }
 }
