@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour
     private float maxSpeed = 5;
     private float forceModifier = 15;
     [Header("Jumping")]
-    private float jumpingForce = 4;
+    public float jumpingForce = 20;
     private float jumpingForceModifier = .2f;
     private float jumpingMaxSpeedModifier = 1.1f;
     private float groundCheckLength = 1f;
